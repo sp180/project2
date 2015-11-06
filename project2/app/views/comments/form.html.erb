@@ -1,0 +1,13 @@
+<h3>
+  Post A Comment
+</h3>
+<%= form_for [@post, @comment] do |t| %>
+  <p>
+    <%= t.label :content %>
+      <br>
+    <%= t.text_field :content %>
+  </p>
+  <p>
+    <%= t.submit "Add New Comment", class: "button" %>
+  </p>
+<% end %>

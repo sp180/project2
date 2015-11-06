@@ -1,0 +1,7 @@
+<%= form_for @user do |f| %>
+  Alias: <%= f.text_field :alias %>
+  Email: <%= f.text_field :email %>
+  <%= f.submit "Submit Change" %>
+<% end %>
+
+<%= link_to "Return to Home Page", "/" %>

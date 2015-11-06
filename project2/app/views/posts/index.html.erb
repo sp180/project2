@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+    <div class="post">
+      <%= link_to post.text, user_posts_path(post) %>
+      <img src="<%= post.image_url %>" alt="<%= post.id %>" />
+      <%= link_to "Edit", edit_user_post(post), class: "button" %>
+      <%= link_to "Delete", post_path(post), method: :delete, class: "button danger" %>
+    </div>
+  <% end %>
