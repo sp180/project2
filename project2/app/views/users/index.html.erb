@@ -1,11 +1,15 @@
 <h1>
-Home Page
+  Home Page
 </h1>
-
+<h2>
+  Create A Post
+</h2>
+<%#= binding.pry %>
+<%#= link_to "Create Post", url: new_user_post_path(@current_user) %>
+  <br>
 <p>
-Current User List Below
+  Current User List Below
 </p>
-
   <ul>
     <% @users.each do |user| %>
     <li>

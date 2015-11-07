@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'users#index'
+  root 'sessions#new'
 
   resources :users do
     resources :posts do

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  skip_before_action :authorize, only: [:index, :new, :create]
+  before_action :authorize, except: [:new, :create]
 
   def index
     @users = User.all
@@ -13,13 +13,14 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to '/users'
     else
       redirect_to '/signup'
     end
   end
 
   def show
+    @users = User.all
     @user = User.find(params[:id])
   end
 
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
     user = User.find(id)
 
     if user.update(user_params)
-      redirect_to('/')
+      redirect_to('/users')
     else
       redirect_to "users/#{id}/edit/"
     end

@@ -11,6 +11,8 @@ Migrate in new columns for likes and dislikes
 - learn how to migrate in new columns
 - limit likes or dislikes for each post or comment to once per user
 
+Add liking or disliking functionality: https://github.com/ryanto/acts_as_votable
+
 
 Later:
 

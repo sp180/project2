@@ -19,9 +19,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = params[:user_id]
 
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to user_posts_path(@post.user_id)
     else
       render :new
     end
@@ -29,15 +30,15 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_path(@post)
+      redirect_to user_posts_path(@post.user_id)
     else
       render :edit
     end
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_path
+    @post.destroy(post_params)
+    redirect_to user_posts_path(@post.user_id)
   end
 
   private
