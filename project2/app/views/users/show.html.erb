@@ -1,26 +1,23 @@
 <h1>User Profile</h1>
 
-<%= @user.alias %>
-<%= @user.email %>
+<%= current_user.alias %>
+<%= current_user.email %>
 
 <h2>
   Create A Post
 </h2>
-<%#= binding.pry %>
 <%= link_to "Create Post", new_user_post_path(current_user) %>
 
 <p>
-  Current User List Below
+  User Details Below
 </p>
   <ul>
-    <% @users.each do |user| %>
     <li>
-      <%= link_to "ID: #{user.id}", "/users/#{user.id}" %>
-      <%= link_to "Edit Profile", "/users/#{user.id}/edit" %>
-      Alias: <%= user.alias %>
-      Email: <%= user.email %>
+      <%= link_to "ID: #{current_user.id}", "/users/#{current_user.id}" %>
+      <%= link_to "Edit Profile", "/users/#{current_user.id}/edit" %>
+      Alias: <%= current_user.alias %>
+      Email: <%= current_user.email %>
     </li>
-    <% end %>
   </ul>
 
-<%= link_to "Return to Home Page", "/" %>
+<%= link_to "See List of Users", "/users" %>

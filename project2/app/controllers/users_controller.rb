@@ -20,12 +20,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.all
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
   end
 
   def update
@@ -35,7 +33,7 @@ class UsersController < ApplicationController
     if user.update(user_params)
       redirect_to('/users')
     else
-      redirect_to "users/#{id}/edit/"
+      redirect_to "users/#{current_user.id}/edit/"
     end
   end
 
