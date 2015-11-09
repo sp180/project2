@@ -6,8 +6,15 @@
 <h2>
   Create A Post
 </h2>
+<h4>
 <%= link_to "Create Post", new_user_post_path(current_user) %>
-
+</h4>
+<h2>
+  List of User's Posts
+</h2>
+<h4>
+<%= link_to "See Current User's Posts", user_posts_path(current_user) %>
+</h4>
 <p>
   User Details Below
 </p>
@@ -19,5 +26,6 @@
       Email: <%= current_user.email %>
     </li>
   </ul>
-
+<h4>
 <%= link_to "See List of Users", "/users" %>
+</h4>

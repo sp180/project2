@@ -1,4 +1,17 @@
 <h1>
   Edit Post
 </h1>
-<%= render partial: 'form' %>
+<%#= render partial: 'form' %>
+<%= form_for @post, url: {action: "update"} do |f| %>
+  <p>
+    <%= f.label :text %>
+    <%= f.text_area :text, size: "30x3" %>
+    <img src="<%= @post.image_url %>" alt= "<%= @post.id %>" >
+    <%= f.label "Image" %>
+    <%= f.text_field :image_url %>
+    <%= f.submit class: "button" %>
+  </p>
+<% end %>
+<h4>
+<%= link_to "Return to User's Posts", "/users/#{current_user.id}/posts" %>
+</h4>

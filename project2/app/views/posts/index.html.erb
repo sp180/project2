@@ -1,8 +1,14 @@
+<h3>
+  Posts by <%= "#{current_user.alias}" %>
+</h3>
 <% @posts.each do |post| %>
     <div class="post">
-      <%= link_to post.text, user_posts_path(post) %>
+      <%= link_to post.text, user_posts_path(post.user.id) %>
       <img src="<%= post.image_url %>" alt="<%= post.id %>" />
       <%= link_to "Edit", edit_user_post_path(post.user.id, post.id), class: "button" %>
-      <%= link_to "Delete", user_path(post.user, post), method: :delete, class: "button danger" %>
+      <%= link_to "Delete", user_post_path(post.user.id, post.id), method: :delete, class: "button danger" %>
     </div>
   <% end %>
+<h4>
+<%= link_to "Return to User Profile", "/users/#{current_user.id}" %>
+</h4>

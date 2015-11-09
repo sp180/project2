@@ -1,6 +1,7 @@
 <h1>
   Add A New Post
 </h1>
-<%= render partial: 'form', locals: {post: @post, user: @user} %>
-
-<%= link_to "Return to Home Page", "/" %>
+<%= render partial: 'form', locals: {post: @post, user: current_user.id} %>
+<h4>
+<%= link_to "Return to User Profile", "/users/#{current_user.id}" %>
+</h4>

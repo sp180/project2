@@ -6,7 +6,7 @@
 <h3>
   Comments
 </h3>
-<%= render partial: 'tweeds/comment', collection: @post.comments %>
+<%= render partial: 'posts/comment', collection: @post.comments %>
 <%= link_to "Edit", edit_post_path(@post), class: "button" %>
 <%= link_to "Delete", post_path(@post), class: "button danger" %>
 <%= link_to "Return to Posts", posts_path, class: "button" %>
